@@ -1,0 +1,136 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert a new unit test"
+        android:textAlignment="textStart"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textEdit"
+        app:layout_constraintTop_toBottomOf="@+id/textEdit">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="name"
+            android:inputType="text"
+            android:textSize="30dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/inputLayoutClass"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/inputLayoutName"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textEdit">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/edClass"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:ems="10"-->
+<!--            android:hint="type"-->
+<!--            android:inputType="text"-->
+<!--            android:textSize="30dp" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutScriptStartup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textEdit"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edScriptStartup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="30"
+            android:hint="startup"
+            android:inputType="text"
+            android:text="eq.Start().Wait(1);"
+            android:textSize="30dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutScriptBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textEdit"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutScriptStartup">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edScriptBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="50"
+            android:hint="body"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:text="eq.Set(Acceleration, 0.17).Set( MaxSpeed, 8 ).Set( Speed, 5 ).Wait(30).TestEqual( Speed, 5 ).Set( Speed, 10 ).Wait(30).TestEqual( Speed, 8 ).Set( Speed, 500 ).Wait(15).TestEqual( Speed, 8 ).Set(Acceleration, 1).Set( Speed, 3).Wait(5).TestEqual( Speed, 3 );"
+            android:textSize="30dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutTearDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/textEdit"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutScriptBody">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edScriptTearDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="30"
+            android:hint="teardown"
+            android:inputType="text"
+            android:text="eq.Stop().Wait(5);"
+            android:textSize="30dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_save"
+        app:srcCompat="@drawable/ic_action_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
